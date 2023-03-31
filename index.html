@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Personal Portfolio Website Design</title>
+
+    <!-- box icons -->
+    <link href="http://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<script>
+    //create CSV file data in an array  
+    var csvFileData = [
+        ['Alan Walker', 'Singer'],
+        ['Cristiano Ronaldo', 'Footballer'],
+        ['Saina Nehwal', 'Badminton Player'],
+        ['Arijit Singh', 'Singer'],
+        ['Terence Lewis', 'Dancer']
+    ];
+
+    //create a user-defined function to download CSV file   
+    function download_csv_file() {
+
+        //define the heading for each row of the data  
+        var csv = 'Name,Profession\n';
+
+        //merge the data with CSV  
+        csvFileData.forEach(function (row) {
+            csv += row.join(',');
+            csv += "\n";
+        });
+
+        //display the created CSV data on the web browser   
+        document.write(csv);
+
+
+        var hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+
+        //provide the name for the CSV file to be downloaded  
+        hiddenElement.download = 'Famous Personalities.csv';
+        hiddenElement.click();
+    }  
+</script>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- home section design-->
+    <section class="home" id="home">
+
+        <div class="home-content">
+            <h3>Hello, It's me</h3>
+            <h1>Stella Susai</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio ad fugit eligendi cupiditate tempora
+                quidem optio repellat amet earum nam.</p>
+            <div class="social-media">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <a href="" class="btn" onclick="download_csv_file()">Download CV</a>
+        </div>
+
+        <div class="home-img">
+            <img src="images/home.jpg" alt="" width="100px" height="300px">
+        </div>
+    </section>
+
+    <!-- about section design -->
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/about.jpg" alt="" height="300px">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Fronend Developer!</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos necessitatibus doloribus laudantium alias
+                blanditiis, molestias ab ea ipsa nemo soluta quaerat repellendus rerum dolorem suscipit minima,
+                distinctio, autem impedit harum tenetur adipisci commodi fugit voluptates! Odit fuga fugit vel deleniti
+                consectetur reiciendis aut ex quaerat quos!</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- service section design -->
+
+    <section class="services" id="services">
+        <h2 class="heading">Our <span>Services</span></h2>
+        <div class="services-container">
+            <div class="service-box">
+                <i class="bx bx-code-alt"></i>
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae ipsum maxime deserunt molestiae,
+                    mollitia debitis impedit dicta eius sunt minima.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="service-box">
+                <i class="bx bxs-paint"></i>
+                <h3>Graphic Design</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae ipsum maxime deserunt molestiae,
+                    mollitia debitis impedit dicta eius sunt minima.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="service-box">
+                <i class="bx bx-bar-chart-alt"></i>
+                <h3>Digital Marketing</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae ipsum maxime deserunt molestiae,
+                    mollitia debitis impedit dicta eius sunt minima.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- portfolio section design -->
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/portfolio1.jpg" alt="" width="300px" height="300px">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consequuntur?</p>
+                    <a href="#">
+                        <i class="bx bx-link-external"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio2.jpg" alt="" width="300px" height="300px">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consequuntur?</p>
+                    <a href="#">
+                        <i class="bx bx-link-external"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio3.jpg" alt="" width="300px" height="300px">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consequuntur?</p>
+                    <a href="#">
+                        <i class="bx bx-link-external"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio4.jpg" alt="" width="300px" height="300px">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consequuntur?</p>
+                    <a href="#">
+                        <i class="bx bx-link-external"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio5.jpg" alt="" width="300px" height="300px">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consequuntur?</p>
+                    <a href="#">
+                        <i class="bx bx-link-external"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/portfolio6.jpg" alt="" width="300px" height="300px">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, consequuntur?
+                    </p>
+                    <a href="#">
+                        <i class="bx bx-link-external"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--contact section design-->
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="email" placeholder="Email Subject">
+            </div>
+
+            <textarea name="" id="" cols="30" row="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <!-- footer design -->
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Stella | All Rights Reserved</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+        </div>
+    </footer>
+
+
+    <!-- scroll reveal -->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
