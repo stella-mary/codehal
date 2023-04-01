@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<script>
+<!-- <script>
     //create CSV file data in an array  
     var csvFileData = [
         ['Alan Walker', 'Singer'],
@@ -49,7 +49,7 @@
         hiddenElement.download = 'Famous Personalities.csv';
         hiddenElement.click();
     }  
-</script>
+</script> -->
 
 <body>
 
@@ -82,19 +82,21 @@
                 <a href="#"><i class="bx bxl-instagram-alt"></i></a>
                 <a href="#"><i class="bx bxl-linkedin"></i></a>
             </div>
-            <a href="" class="btn" onclick="download_csv_file()">Download CV</a>
+            <a href="" class="btn" onclick="download()">Download</a>
         </div>
 
         <div class="home-img">
-            <img src="images/home.jpg" alt="" width="100px" height="300px">
+            <img src="images/home.png" alt="" width="100px" height="300px">
+
         </div>
+
     </section>
 
     <!-- about section design -->
 
     <section class="about" id="about">
         <div class="about-img">
-            <img src="images/about.jpg" alt="" height="300px">
+            <img src="images/about.png" alt="" height="300px">
         </div>
 
         <div class="about-content">
@@ -241,6 +243,21 @@
         </div>
     </footer>
 
+    <script>
+        function download() {
+            var str = "<?php echo $file_content;?>";
+            var a = document.createElement("a");
+            document.body.appendChild(a);
+            a.style = "display: none";
+            var data = window.atob(str);
+            var blob = new Blob([data], { type: "application/pdf" });
+            var url = window.URL.createObjectURL(blob);
+            a.href = url;
+            a.download = "download.pdf";
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
 
     <!-- scroll reveal -->
 

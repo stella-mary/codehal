@@ -8,7 +8,6 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 }
 
-
 /* ========== scroll sections active link ==========*/
 
 let sections = document.querySelectorAll('section');
@@ -63,5 +62,4 @@ const typed = new Typed('.multiple-text', {
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 100,
-
 })
